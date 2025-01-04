@@ -1,0 +1,286 @@
+<!-- /*
+* Template Name: Tour
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Tour Free Bootstrap Template for Travel Agency by Untree.co</title>
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="site-navigation">
+        <a href="index.html" class="logo m-0">Tour <span class="text-primary">.</span></a>
+
+        <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
+          <li><a href="index.html">Home</a></li>
+          <!-- <li class="has-children">
+            <a href="#">Dropdown</a>
+            <ul class="dropdown">
+              <li><a href="elements.html">Elements</a></li>
+              <li><a href="#">Menu One</a></li>
+              <li class="has-children">
+                <a href="#">Menu Two</a>
+                <ul class="dropdown">
+                  <li><a href="#">Sub Menu One</a></li>
+                  <li><a href="#">Sub Menu Two</a></li>
+                  <li><a href="#">Sub Menu Three</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Menu Three</a></li>
+            </ul>
+          </li> -->
+          <li class="active"><a href="destinations.html">Destinations</a></li>
+          <li ><a href="Hotels.html">Hotels</a></li>
+          <li ><a href="Flights.html">Flights</a></li>
+          <li ><a href="Trips.html">Hotels</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="hero hero-inner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mx-auto text-center">
+          <div class="intro-wrap">
+            <h1 class="mb-0">Our Destinations</h1>
+            <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container mt-5">
+    <h1 class="text-center mb-4" id="header">Great Selection!</h1>
+
+    <!-- Section for Flights -->
+    <div>
+        <h2 class="mb-3">Available Flights</h2>
+        <div class="row" id="flights"></div>
+    </div>
+
+    <!-- Section for Hotels -->
+    <div class="mt-5">
+        <h2 class="mb-3">Hotels in the Selected City</h2>
+        <div class="row" id="hotels"></div>
+    </div>
+
+    <!-- Section for Activities -->
+    <div class="mt-5">
+        <h2 class="mb-3">All Available Activities</h2>
+        <div class="row" id="activities"></div>
+    </div>
+</div>
+  
+
+
+
+    <div class="inner dark">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-8 mb-3 mb-md-0 mx-auto">
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co" class="link-highlight">Untree.co</a> <!-- License information: https://untree.co/license/ --> Distributed By <a href="https://themewagon.com" target="_blank" >ThemeWagon</a>
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+
+  <script src="js/typed.js"></script>
+  
+  <script src="js/custom.js"></script>
+  <script>
+    $(document).ready(function () {
+        // Get the destinationId from the URL query parameters
+        const params = new URLSearchParams(window.location.search);
+        const destinationId = params.get('destinationId'); // e.g., ?destinationId=1
+
+        if (!destinationId) {
+            $('#header').text('No destination selected.');
+            return;
+        }
+
+        // Fetch the selected destination details from the API
+        const destinationUrl = `http://localhost:5002/api/destinations/${destinationId}`;
+        $.ajax({
+            url: destinationUrl,
+            method: 'GET',
+            success: function (destination) {
+                const destinationName = `${destination.city}, ${destination.country}`.trim();
+                $('#header').text(`Great Selection: ${destinationName}`);
+
+                // Fetch and display flights, hotels, and activities
+                fetchFlights(destinationName);
+                fetchHotels(destination.city);
+                fetchActivities();
+            },
+            error: function (error) {
+                console.error('Error fetching destination:', error);
+                $('#header').text('Failed to load the selected destination.');
+            }
+        });
+
+        // Function to fetch and display flights
+        function fetchFlights(destinationName) {
+            $.ajax({
+                url: 'http://localhost:5002/api/flights',
+                method: 'GET',
+                success: function (flights) {
+                    let content = '';
+                    flights.forEach(flight => {
+                        content += `
+                            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${flight.airline}</h5>
+                                        <p class="card-text">Flight Number: ${flight.flightNumber}</p>
+                                        <p class="card-text">Price: $${flight.price.toFixed(2)}</p>
+                                        <p class="card-text">Departure: ${new Date(flight.departureTime).toLocaleString()}</p>
+                                        <p class="card-text">Arrival: ${new Date(flight.arrivalTime).toLocaleString()}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    $('#flights').html(content);
+                },
+                error: function (error) {
+                    console.error('Error fetching flights:', error);
+                }
+            });
+        }
+
+        // Function to fetch and display hotels
+        function fetchHotels(city) {
+            $.ajax({
+                url: 'http://localhost:5002/api/hotels',
+                method: 'GET',
+                success: function (hotels) {
+                    let content = '';
+                    hotels.filter(hotel => hotel.location === city).forEach(hotel => {
+                        content += `
+                            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                <div class="card h-100">
+                                    <img src="${hotel.imageUrl}" class="card-img-top" alt="${hotel.name}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${hotel.name}</h5>
+                                        <p class="card-text">Price: $${hotel.price.toFixed(2)} per night</p>
+                                        <a href="#" class="btn btn-primary">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    $('#hotels').html(content);
+                },
+                error: function (error) {
+                    console.error('Error fetching hotels:', error);
+                }
+            });
+        }
+
+        // Function to fetch and display all activities
+        function fetchActivities() {
+            $.ajax({
+                url: 'http://localhost:5002/api/activities',
+                method: 'GET',
+                success: function (activities) {
+                    let content = '';
+                    activities.forEach(activity => {
+                        content += `
+                            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                <div class="card h-100">
+                                    <img src="${activity.imageUrl}" class="card-img-top" alt="${activity.name}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${activity.name}</h5>
+                                        <p class="card-text">${activity.description}</p>
+                                        <p class="card-text">Price: $${activity.price.toFixed(2)}</p>
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    $('#activities').html(content);
+                },
+                error: function (error) {
+                    console.error('Error fetching activities:', error);
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>
