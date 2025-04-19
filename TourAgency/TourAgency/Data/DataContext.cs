@@ -18,7 +18,12 @@ namespace TourAgency.Data
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
-        public int MyProperty { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<BookingItem> BookingItems { get; set; }
+        public DbSet<HotelBooking> HotelBookings { get; set; }
+        public DbSet<FlightBooking> FlightBookings { get; set; }
+        public DbSet<ActivityBooking> ActivityBookings { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -114,6 +119,43 @@ namespace TourAgency.Data
             modelBuilder.Entity<Reservation>()
                 .HasMany(r => r.Trips)
                 .WithMany(t => t.Reservations);
+
+
+            // Booking → BookingItems (1-to-many)
+            modelBuilder.Entity<Booking>()
+                .HasMany(b => b.Items)
+                .WithOne()
+                .HasForeignKey(i => i.BookingId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // BookingItem → HotelBooking (optional FK by ID only, not navigation property)
+            modelBuilder.Entity<BookingItem>()
+                .Property(b => b.Type)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            // HotelBooking relation (HotelBooking → Hotel)
+            modelBuilder.Entity<HotelBooking>()
+                .HasOne(hb => hb.Hotel)
+                .WithMany()
+                .HasForeignKey(hb => hb.HotelId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // FlightBooking
+            modelBuilder.Entity<FlightBooking>().HasKey(fb => fb.Id);
+
+            modelBuilder.Entity<FlightBooking>()
+                .HasOne(fb => fb.Flight)
+                .WithMany()
+                .HasForeignKey(fb => fb.FlightId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ActivityBooking>()
+                .HasOne(ab => ab.Activity)
+                .WithMany()
+                .HasForeignKey(ab => ab.ActivityId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             //SeedData
             SeedData.Seed(modelBuilder);
         }

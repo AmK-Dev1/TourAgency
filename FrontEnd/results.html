@@ -100,7 +100,7 @@
   </div>
 
   
-  <div class="container mt-5">
+  <div class="container mt-5" id="main-container">
     <h1 class="text-center mb-4" id="header">Great Selection!</h1>
 
     <!-- Section for Flights -->
@@ -122,6 +122,10 @@
     </div>
 </div>
   
+<div class="text-center my-5">
+  <button id="bookNowBtn" class="btn btn-success btn-lg">Book Selected Services</button>
+</div>
+
 
 
 
@@ -170,6 +174,24 @@
             return;
         }
 
+        $('#bookNowBtn').on('click', function () {
+            const selectedHotel = $('input[name="selectedHotel"]:checked').val();
+            const selectedFlight = $('input[name="selectedFlight"]:checked').val();
+            const selectedActivities = $('.activity-option:checked').map(function () {
+                return $(this).val();
+            }).get();
+
+            const selectionData = {
+                hotelId: selectedHotel || null,
+                flightId: selectedFlight || null,
+                activityIds: selectedActivities
+            };
+
+            localStorage.setItem("bookingSelections", JSON.stringify(selectionData));
+            window.location.href = "bookmany.html";
+        });
+
+
         // Fetch the selected destination details from the API
         const destinationUrl = `http://localhost:5002/api/destinations/${destinationId}`;
         $.ajax({
@@ -199,18 +221,22 @@
                     let content = '';
                     flights.forEach(flight => {
                         content += `
-                            <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${flight.airline}</h5>
-                                        <p class="card-text">Flight Number: ${flight.flightNumber}</p>
-                                        <p class="card-text">Price: $${flight.price.toFixed(2)}</p>
-                                        <p class="card-text">Departure: ${new Date(flight.departureTime).toLocaleString()}</p>
-                                        <p class="card-text">Arrival: ${new Date(flight.arrivalTime).toLocaleString()}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
+                                  <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                      <div class="card h-100">
+                                          <div class="card-body">
+                                              <h5 class="card-title">${flight.airline}</h5>
+                                              <p class="card-text">Flight Number: ${flight.flightNumber}</p>
+                                              <p class="card-text">Price: $${flight.price.toFixed(2)}</p>
+                                              <p class="card-text">Departure: ${new Date(flight.departureTime).toLocaleString()}</p>
+                                              <p class="card-text">Arrival: ${new Date(flight.arrivalTime).toLocaleString()}</p>
+                                              <div class="form-check">
+                                                <input class="form-check-input flight-option" type="radio" name="selectedFlight" value="${flight.id}">
+                                                <label class="form-check-label">Select Flight</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              `;
                     });
                     $('#flights').html(content);
                 },
@@ -229,17 +255,20 @@
                     let content = '';
                     hotels.filter(hotel => hotel.location === city).forEach(hotel => {
                         content += `
-                            <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <div class="card h-100">
-                                    <img src="${hotel.imageUrl}" class="card-img-top" alt="${hotel.name}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${hotel.name}</h5>
-                                        <p class="card-text">Price: $${hotel.price.toFixed(2)} per night</p>
-                                        <a href="#" class="btn btn-primary">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
+                                  <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                      <div class="card h-100">
+                                          <img src="${hotel.imageUrl}" class="card-img-top" alt="${hotel.name}">
+                                          <div class="card-body">
+                                              <h5 class="card-title">${hotel.name}</h5>
+                                              <p class="card-text">Price: $${hotel.price.toFixed(2)} per night</p>
+                                              <div class="form-check">
+                                                <input class="form-check-input hotel-option" type="radio" name="selectedHotel" value="${hotel.id}">
+                                                <label class="form-check-label">Select Hotel</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              `;
                     });
                     $('#hotels').html(content);
                 },
@@ -258,18 +287,21 @@
                     let content = '';
                     activities.forEach(activity => {
                         content += `
-                            <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <div class="card h-100">
-                                    <img src="${activity.imageUrl}" class="card-img-top" alt="${activity.name}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${activity.name}</h5>
-                                        <p class="card-text">${activity.description}</p>
-                                        <p class="card-text">Price: $${activity.price.toFixed(2)}</p>
-                                        <a href="#" class="btn btn-primary">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
+                                  <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                      <div class="card h-100">
+                                          <img src="${activity.imageUrl}" class="card-img-top" alt="${activity.name}">
+                                          <div class="card-body">
+                                              <h5 class="card-title">${activity.name}</h5>
+                                              <p class="card-text">${activity.description}</p>
+                                              <p class="card-text">Price: $${activity.price.toFixed(2)}</p>
+                                              <div class="form-check">
+                                                <input class="form-check-input activity-option" type="checkbox" value="${activity.id}">
+                                                <label class="form-check-label">Select Activity</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              `;
                     });
                     $('#activities').html(content);
                 },
@@ -278,6 +310,26 @@
                 }
             });
         }
+
+        // À la fin du document ready :
+        $('#bookNowBtn').on('click', function () {
+          const selectedHotel = $('input[name="selectedHotel"]:checked').val();
+          const selectedFlight = $('input[name="selectedFlight"]:checked').val();
+          const selectedActivities = $('.activity-option:checked').map(function () {
+              return $(this).val();
+          }).get();
+
+          const selectionData = {
+              hotelId: selectedHotel || null,
+              flightId: selectedFlight || null,
+              activityIds: selectedActivities
+          };
+
+          localStorage.setItem("bookingSelections", JSON.stringify(selectionData));
+          window.location.href = "bookmany.html";
+      });
+
+
     });
 </script>
 

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TourAgency.Migrations
 {
     /// <inheritdoc />
-    public partial class images : Migration
+    public partial class BookingActivitynew : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,11 +21,26 @@ namespace TourAgency.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Activities", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Bookings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BookingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bookings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -87,6 +102,92 @@ namespace TourAgency.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Trips", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ActivityBookings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ActivityId = table.Column<int>(type: "int", nullable: false),
+                    ActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Participants = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ActivityBookings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ActivityBookings_Activities_ActivityId",
+                        column: x => x.ActivityId,
+                        principalTable: "Activities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BookingItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BookingId = table.Column<int>(type: "int", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    EntityBookingId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BookingItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BookingItems_Bookings_BookingId",
+                        column: x => x.BookingId,
+                        principalTable: "Bookings",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FlightBookings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FlightId = table.Column<int>(type: "int", nullable: false),
+                    TravelClass = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Passengers = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FlightBookings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FlightBookings_Flights_FlightId",
+                        column: x => x.FlightId,
+                        principalTable: "Flights",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HotelBookings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HotelId = table.Column<int>(type: "int", nullable: false),
+                    CheckIn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CheckOut = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RoomType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Guests = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HotelBookings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_HotelBookings_Hotels_HotelId",
+                        column: x => x.HotelId,
+                        principalTable: "Hotels",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -278,15 +379,20 @@ namespace TourAgency.Migrations
 
             migrationBuilder.InsertData(
                 table: "Activities",
-                columns: new[] { "Id", "Description", "Name", "Price" },
+                columns: new[] { "Id", "Description", "ImageUrl", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, "A thrilling ski trip in the Alps.", "Skiing Adventure", 150m },
-                    { 2, "Explore the wonders of the local museum.", "Museum Tour", 50m },
-                    { 3, "A guided tour of the city's landmarks.", "City Sightseeing", 75m },
-                    { 4, "A challenging hike through scenic mountains.", "Mountain Hiking", 100m },
-                    { 5, "Experience underwater adventure.", "Scuba Diving", 200m }
+                    { 1, "A thrilling ski trip in the Alps.", "images/ski.jpg", "Skiing Adventure", 150m },
+                    { 2, "Explore the wonders of the local museum.", "images/museum.jpg", "Museum Tour", 50m },
+                    { 3, "A guided tour of the city's landmarks.", "images/sight.jpg", "City Sightseeing", 75m },
+                    { 4, "A challenging hike through scenic mountains.", "images/hiking.jpg", "Mountain Hiking", 100m },
+                    { 5, "Experience underwater adventure.", "images/diving.jpg", "Scuba Diving", 200m }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Bookings",
+                columns: new[] { "Id", "BookingDate", "UserEmail" },
+                values: new object[] { 1, new DateTime(2025, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "john.doe@example.com" });
 
             migrationBuilder.InsertData(
                 table: "Destination",
@@ -317,11 +423,11 @@ namespace TourAgency.Migrations
                 columns: new[] { "Id", "ImageUrl", "Location", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, null, "Paris", "Grand Paris Hotel", 150m },
-                    { 2, null, "Rome", "Rome Luxury Suites", 200m },
-                    { 3, null, "New York", "NYC Central Park Hotel", 180m },
-                    { 4, null, "Tokyo", "Tokyo Sakura Hotel", 140m },
-                    { 5, null, "Sydney", "Sydney Harbour Hotel", 220m }
+                    { 1, "images/hotel1.jpg", "Paris", "Grand Paris Hotel", 150m },
+                    { 2, "images/hotel2.jpg", "Rome", "Rome Luxury Suites", 200m },
+                    { 3, "images/hotel3.jpg", "New York", "NYC Central Park Hotel", 180m },
+                    { 4, "images/hotel4.jpg", "Tokyo", "Tokyo Sakura Hotel", 140m },
+                    { 5, "images/hotel1.jpg", "Sydney", "Sydney Harbour Hotel", 220m }
                 });
 
             migrationBuilder.InsertData(
@@ -365,6 +471,11 @@ namespace TourAgency.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "BookingItems",
+                columns: new[] { "Id", "BookingId", "EntityBookingId", "Type" },
+                values: new object[] { 1, 1, 1, "Hotel" });
+
+            migrationBuilder.InsertData(
                 table: "DestinationTrip",
                 columns: new[] { "DestinationsId", "TripsId" },
                 values: new object[,]
@@ -387,6 +498,11 @@ namespace TourAgency.Migrations
                     { 4, 4 },
                     { 5, 5 }
                 });
+
+            migrationBuilder.InsertData(
+                table: "HotelBookings",
+                columns: new[] { "Id", "CheckIn", "CheckOut", "Guests", "HotelId", "RoomType" },
+                values: new object[] { 1, new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, "Double" });
 
             migrationBuilder.InsertData(
                 table: "HotelTrip",
@@ -425,9 +541,19 @@ namespace TourAgency.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_ActivityBookings_ActivityId",
+                table: "ActivityBookings",
+                column: "ActivityId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ActivityTrip_TripsId",
                 table: "ActivityTrip",
                 column: "TripsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookingItems_BookingId",
+                table: "BookingItems",
+                column: "BookingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DestinationTrip_TripsId",
@@ -435,9 +561,19 @@ namespace TourAgency.Migrations
                 column: "TripsId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FlightBookings_FlightId",
+                table: "FlightBookings",
+                column: "FlightId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_FlightTrip_TripsId",
                 table: "FlightTrip",
                 column: "TripsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HotelBookings_HotelId",
+                table: "HotelBookings",
+                column: "HotelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HotelTrip_TripsId",
@@ -500,19 +636,34 @@ namespace TourAgency.Migrations
                 table: "Images");
 
             migrationBuilder.DropTable(
+                name: "ActivityBookings");
+
+            migrationBuilder.DropTable(
                 name: "ActivityTrip");
+
+            migrationBuilder.DropTable(
+                name: "BookingItems");
 
             migrationBuilder.DropTable(
                 name: "DestinationTrip");
 
             migrationBuilder.DropTable(
+                name: "FlightBookings");
+
+            migrationBuilder.DropTable(
                 name: "FlightTrip");
+
+            migrationBuilder.DropTable(
+                name: "HotelBookings");
 
             migrationBuilder.DropTable(
                 name: "HotelTrip");
 
             migrationBuilder.DropTable(
                 name: "ReservationTrip");
+
+            migrationBuilder.DropTable(
+                name: "Bookings");
 
             migrationBuilder.DropTable(
                 name: "Destination");

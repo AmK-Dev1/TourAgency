@@ -121,6 +121,41 @@ namespace TourAgency.Data
                 new { ActivitiesId = 4, TripsId = 4 },
                 new { ActivitiesId = 5, TripsId = 5 }
             );
+
+            // Seed hotel reservation : 
+            modelBuilder.Entity<HotelBooking>().HasData(
+                new HotelBooking
+                {
+                    Id = 1,
+                    HotelId = 1, // Grand Paris Hotel
+                    CheckIn = new DateTime(2025, 6, 10),
+                    CheckOut = new DateTime(2025, 6, 15),
+                    RoomType = "Double",
+                    Guests = 2
+                }
+            );
+
+            // Seed booking
+            modelBuilder.Entity<Booking>().HasData(
+                new Booking
+                {
+                    Id = 1,
+                    UserEmail = "john.doe@example.com",
+                    BookingDate = new DateTime(2025, 6, 1)
+                }
+            );
+
+            //Seed booking Item : 
+            modelBuilder.Entity<BookingItem>().HasData(
+                new BookingItem
+                {
+                    Id = 1,
+                    BookingId = 1,
+                    Type = "Hotel",
+                    EntityBookingId = 1 // correspond à HotelBooking.Id
+                }
+            );
+
         }
     }
 }

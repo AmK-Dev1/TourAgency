@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-
+﻿
 namespace TourAgency.Models
 {
     public class Image

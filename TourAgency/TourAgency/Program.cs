@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using TourAgency.Data;
+using TourAgency.Services;
 
 namespace TourAgency
 {
@@ -13,10 +14,12 @@ namespace TourAgency
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddScoped<MailerService>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
             builder.Services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

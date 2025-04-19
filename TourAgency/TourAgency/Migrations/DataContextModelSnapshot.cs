@@ -277,6 +277,93 @@ namespace TourAgency.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TourAgency.Models.ActivityBooking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("ActivityDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ActivityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Participants")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActivityId");
+
+                    b.ToTable("ActivityBookings");
+                });
+
+            modelBuilder.Entity("TourAgency.Models.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("BookingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bookings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookingDate = new DateTime(2025, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserEmail = "john.doe@example.com"
+                        });
+                });
+
+            modelBuilder.Entity("TourAgency.Models.BookingItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EntityBookingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.ToTable("BookingItems");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookingId = 1,
+                            EntityBookingId = 1,
+                            Type = "Hotel"
+                        });
+                });
+
             modelBuilder.Entity("TourAgency.Models.Destination", b =>
                 {
                     b.Property<int>("Id")
@@ -420,6 +507,31 @@ namespace TourAgency.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TourAgency.Models.FlightBooking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FlightId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Passengers")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TravelClass")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FlightId");
+
+                    b.ToTable("FlightBookings");
+                });
+
             modelBuilder.Entity("TourAgency.Models.Hotel", b =>
                 {
                     b.Property<int>("Id")
@@ -489,6 +601,48 @@ namespace TourAgency.Migrations
                             Location = "Sydney",
                             Name = "Sydney Harbour Hotel",
                             Price = 220m
+                        });
+                });
+
+            modelBuilder.Entity("TourAgency.Models.HotelBooking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CheckIn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CheckOut")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Guests")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RoomType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.ToTable("HotelBookings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CheckIn = new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOut = new DateTime(2025, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Guests = 2,
+                            HotelId = 1,
+                            RoomType = "Double"
                         });
                 });
 
@@ -822,6 +976,48 @@ namespace TourAgency.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TourAgency.Models.ActivityBooking", b =>
+                {
+                    b.HasOne("TourAgency.Models.Activity", "Activity")
+                        .WithMany()
+                        .HasForeignKey("ActivityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Activity");
+                });
+
+            modelBuilder.Entity("TourAgency.Models.BookingItem", b =>
+                {
+                    b.HasOne("TourAgency.Models.Booking", null)
+                        .WithMany("Items")
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TourAgency.Models.FlightBooking", b =>
+                {
+                    b.HasOne("TourAgency.Models.Flight", "Flight")
+                        .WithMany()
+                        .HasForeignKey("FlightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Flight");
+                });
+
+            modelBuilder.Entity("TourAgency.Models.HotelBooking", b =>
+                {
+                    b.HasOne("TourAgency.Models.Hotel", "Hotel")
+                        .WithMany()
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+                });
+
             modelBuilder.Entity("TourAgency.Models.Image", b =>
                 {
                     b.HasOne("TourAgency.Models.Activity", "Activity")
@@ -866,6 +1062,11 @@ namespace TourAgency.Migrations
             modelBuilder.Entity("TourAgency.Models.Activity", b =>
                 {
                     b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("TourAgency.Models.Booking", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("TourAgency.Models.Hotel", b =>

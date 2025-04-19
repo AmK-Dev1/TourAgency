@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\TourAgency\\TourAgency\\TourAgency.csproj": {}
+    "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\TourAgency.csproj": {}
   },
   "projects": {
-    "C:\\projects\\TourAgency\\TourAgency\\TourAgency.csproj": {
+    "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\TourAgency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\TourAgency\\TourAgency\\TourAgency.csproj",
+        "projectUniqueName": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\TourAgency.csproj",
         "projectName": "TourAgency",
-        "projectPath": "C:\\projects\\TourAgency\\TourAgency\\TourAgency.csproj",
+        "projectPath": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\TourAgency.csproj",
         "packagesPath": "C:\\Users\\medkh\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\TourAgency\\TourAgency\\obj\\",
+        "outputPath": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
