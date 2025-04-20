@@ -40,6 +40,7 @@ namespace TourAgency.Data
             {
                 entity.HasKey(a =>a.Id);
                 entity.Property(a => a.Name).IsRequired().HasMaxLength(25);
+                entity.Property(h => h.Location).IsRequired().HasMaxLength(255);
                 entity.Property(a => a.Description).IsRequired().HasMaxLength(255);
                 entity.Property(a => a.Price).IsRequired().HasPrecision(18, 2); ;
             });

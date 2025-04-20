@@ -8,7 +8,7 @@ namespace TourAgency.Services;
 public class MailerService
 {
     private readonly string senderEmail = "optiflow.dz@gmail.com";
-    private readonly string appPassword = ".";
+    private readonly string appPassword = "";
 
     public void SendBookingConfirmation(string recipientEmail, Booking booking)
     {

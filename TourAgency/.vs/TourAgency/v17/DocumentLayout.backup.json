@@ -3,8 +3,44 @@
   "WorkspaceRootPath": "C:\\.projects\\TourAgency\\TourAgency\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250419193758_BookingActivitynewnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TourAgency\\Migrations\\20250419193758_BookingActivitynewnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420012329_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TourAgency\\Migrations\\20250420012329_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420012205_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TourAgency\\Migrations\\20250420012205_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|c:\\.projects\\touragency\\touragency\\touragency\\data\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|solutionrelative:touragency\\data\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420011719_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TourAgency\\Migrations\\20250420011719_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|c:\\.projects\\touragency\\touragency\\touragency\\services\\mailerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|solutionrelative:touragency\\services\\mailerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420011509_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TourAgency\\Migrations\\20250420011509_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|c:\\.projects\\touragency\\touragency\\touragency\\models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|solutionrelative:touragency\\models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|c:\\.projects\\touragency\\touragency\\touragency\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|solutionrelative:touragency\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|c:\\.projects\\touragency\\touragency\\touragency\\controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|solutionrelative:touragency\\controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|c:\\.projects\\touragency\\touragency\\touragency\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E8FE127-C420-4D6D-9ADA-CEE3235E4B78}|TourAgency\\TourAgency.csproj|solutionrelative:touragency\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +59,131 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250419193758_BookingActivitynewnew.cs",
-              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250419193758_BookingActivitynewnew.cs",
-              "RelativeDocumentMoniker": "TourAgency\\Migrations\\20250419193758_BookingActivitynewnew.cs",
-              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250419193758_BookingActivitynewnew.cs",
-              "RelativeToolTip": "TourAgency\\Migrations\\20250419193758_BookingActivitynewnew.cs",
+              "Title": "20250420012329_init.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420012329_init.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Migrations\\20250420012329_init.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420012329_init.cs",
+              "RelativeToolTip": "TourAgency\\Migrations\\20250420012329_init.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T19:37:58.793Z",
+              "WhenOpened": "2025-04-20T01:23:29.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250420012205_init.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420012205_init.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Migrations\\20250420012205_init.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420012205_init.cs",
+              "RelativeToolTip": "TourAgency\\Migrations\\20250420012205_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T01:22:05.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250420011719_init.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420011719_init.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Migrations\\20250420011719_init.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420011719_init.cs",
+              "RelativeToolTip": "TourAgency\\Migrations\\20250420011719_init.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T01:17:19.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MailerService.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Services\\MailerService.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Services\\MailerService.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Services\\MailerService.cs",
+              "RelativeToolTip": "TourAgency\\Services\\MailerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T01:15:25.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20250420011509_init.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420011509_init.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Migrations\\20250420011509_init.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Migrations\\20250420011509_init.cs",
+              "RelativeToolTip": "TourAgency\\Migrations\\20250420011509_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T01:15:09.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Data\\DataContext.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Data\\DataContext.cs",
+              "RelativeToolTip": "TourAgency\\Data\\DataContext.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCoAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T00:36:25.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Activity.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Models\\Activity.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Models\\Activity.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Models\\Activity.cs",
+              "RelativeToolTip": "TourAgency\\Models\\Activity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T00:35:37.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ActivitiesController.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Controllers\\ActivitiesController.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Controllers\\ActivitiesController.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Controllers\\ActivitiesController.cs",
+              "RelativeToolTip": "TourAgency\\Controllers\\ActivitiesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T00:35:30.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Hotel.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Models\\Hotel.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Models\\Hotel.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Models\\Hotel.cs",
+              "RelativeToolTip": "TourAgency\\Models\\Hotel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T00:35:18.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Seed.cs",
+              "DocumentMoniker": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Data\\Seed.cs",
+              "RelativeDocumentMoniker": "TourAgency\\Data\\Seed.cs",
+              "ToolTip": "C:\\.projects\\TourAgency\\TourAgency\\TourAgency\\Data\\Seed.cs",
+              "RelativeToolTip": "TourAgency\\Data\\Seed.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwB4AAACNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T00:31:48.953Z",
               "EditorCaption": ""
             }
           ]

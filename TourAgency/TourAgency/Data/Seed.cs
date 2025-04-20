@@ -34,20 +34,25 @@ namespace TourAgency.Data
 
             // Seed Activities
             modelBuilder.Entity<Activity>().HasData(
-                new Activity { Id = 1, Name = "Skiing Adventure", Description = "A thrilling ski trip in the Alps.", Price = 150, ImageUrl="images/ski.jpg" },
-                new Activity { Id = 2, Name = "Museum Tour", Description = "Explore the wonders of the local museum.", Price = 50, ImageUrl = "images/museum.jpg" },
-                new Activity { Id = 3, Name = "City Sightseeing", Description = "A guided tour of the city's landmarks.", Price = 75, ImageUrl = "images/sight.jpg"  },
-                new Activity { Id = 4, Name = "Mountain Hiking", Description = "A challenging hike through scenic mountains.", Price = 100, ImageUrl = "images/hiking.jpg" },
-                new Activity { Id = 5, Name = "Scuba Diving", Description = "Experience underwater adventure.", Price = 200, ImageUrl = "images/diving.jpg" }
+                new Activity { Id = 1, Name = "Visit the Eiffel Tower", Description = "Visit the Eiffel Tower and enjoy a dinner cruise on the Seine.", Location= "Paris", Price = 150, ImageUrl= "images/actPa.jpg" },
+                new Activity { Id = 2, Name = "The Empire State Building", Description = "Climb the Empire State Building or Top of the Rock for amazing views.", Location= "New York", Price = 150, ImageUrl= "images/actNy.jpg" },
+                new Activity { Id = 3, Name = "Visit Shibuya", Description = "Visit Shibuya and cross the world-famous scramble crossing", Location = "Tokyo", Price = 150, ImageUrl= "images/actTo.jpg" },
+                new Activity { Id = 4, Name = "The Colosseum", Description = "Explore the Colosseum and the Roman Forum toss a coin into the Trevi Fountain for good luck.", Location= "Rome", Price = 200, ImageUrl= "images/actRo.jpg" },
+                new Activity { Id = 5, Name = "Sydney Opera House", Description = "Admire the iconic Sydney Opera House and Harbour Bridge Relax at Bondi Beach and walk the scenic Bondi to Coogee coastal trail.", Location= "Sydney", Price = 150, ImageUrl= "images/actSy.jpg" },
+                new Activity { Id = 6, Name = "The historic Casbah", Description = "Wander through the historic Casbah of Algiers, a UNESCO World Heritage site", Location = "Algiers", Price = 100, ImageUrl= "images/actAl.jpg" },
+                new Activity { Id = 7, Name = "Palace of the Parliament", Description = "Visit the massive Palace of the Parliament, one of the largest buildings in the world", Location = "Bucharest", Price = 175, ImageUrl= "images/actBu.jpg" }
             );
 
             // Seed Destinations
             modelBuilder.Entity<Destination>().HasData(
                 new Destination { Id = 1, Country = "France", City = "Paris", ImageUrl="images/france.jpg"  },
-                new Destination { Id = 2, Country = "Italy", City = "Rome", ImageUrl = "images/rome.jpg" },
-                new Destination { Id = 3, Country = "USA", City = "New York", ImageUrl = "images/usa.jpg" },
-                new Destination { Id = 4, Country = "Japan", City = "Tokyo", ImageUrl = "images/japan.jpg" },
-                new Destination { Id = 5, Country = "Australia", City = "Sydney", ImageUrl = "images/australia.jpg" }
+                new Destination { Id = 2, Country = "USA", City = "New York", ImageUrl = "images/usa.jpg" },
+                new Destination { Id = 3, Country = "Japan", City = "Tokyo", ImageUrl = "images/japan.jpg" },
+                new Destination { Id = 4, Country = "Italy", City = "Rome", ImageUrl = "images/rome.jpg" },
+                new Destination { Id = 5, Country = "Australia", City = "Sydney", ImageUrl = "images/australia.jpg" },
+                new Destination { Id = 6, Country = "Algeria", City = "Algiers", ImageUrl = "images/australia.jpg" },
+                new Destination { Id = 7, Country = "Romania", City = "Bucharest", ImageUrl = "images/australia.jpg" }
+
             );
 
             // Seed Flights
@@ -61,11 +66,13 @@ namespace TourAgency.Data
 
             // Seed Hotels
             modelBuilder.Entity<Hotel>().HasData(
-                new Hotel { Id = 1, Name = "Grand Paris Hotel", Location = "Paris", Price = 150 , ImageUrl="images/hotel1.jpg" },
-                new Hotel { Id = 2, Name = "Rome Luxury Suites", Location = "Rome", Price = 200, ImageUrl = "images/hotel2.jpg" },
-                new Hotel { Id = 3, Name = "NYC Central Park Hotel", Location = "New York", Price = 180, ImageUrl = "images/hotel3.jpg" },
-                new Hotel { Id = 4, Name = "Tokyo Sakura Hotel", Location = "Tokyo", Price = 140, ImageUrl = "images/hotel4.jpg" },
-                new Hotel { Id = 5, Name = "Sydney Harbour Hotel", Location = "Sydney", Price = 220, ImageUrl = "images/hotel1.jpg" }
+                new Hotel { Id = 1, Name = "Hôtel du Louvre by Hyatt", Location = "Paris", Price = 150 , ImageUrl="images/hotelPa.jpg" },
+                new Hotel { Id = 2, Name = "Hôtel Quin Central Park", Location = "New York", Price = 200, ImageUrl = "images/hotelNy.jpg" },
+                new Hotel { Id = 3, Name = "Hôtel Park Hyatt", Location = "Tokyo", Price = 180, ImageUrl = "images/hotelTo.jpg" },
+                new Hotel { Id = 4, Name = "Hôtel de Russie", Location = "Rome", Price = 140, ImageUrl = "images/hotelRo.jpg" },
+                new Hotel { Id = 5, Name = "Hôtel Shangri-La", Location = "Sydney", Price = 200, ImageUrl = "images/hotelSy.jpg" },
+                new Hotel { Id = 6, Name = "Hôtel El Aurassi", Location = "Algiers", Price = 280, ImageUrl = "images/hotelAl.jpg" },
+                new Hotel { Id = 7, Name = "Hôtel Le Scala Boutique", Location = "Bucharest", Price = 190, ImageUrl = "images/hotelBu.jpg" }
             );
 
             // Seed Trips

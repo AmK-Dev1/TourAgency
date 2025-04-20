@@ -12,8 +12,8 @@ using TourAgency.Data;
 namespace TourAgency.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250419193758_BookingActivitynewnew")]
-    partial class BookingActivitynewnew
+    [Migration("20250420012329_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -224,6 +224,11 @@ namespace TourAgency.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(25)
@@ -241,42 +246,65 @@ namespace TourAgency.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "A thrilling ski trip in the Alps.",
-                            ImageUrl = "images/ski.jpg",
-                            Name = "Skiing Adventure",
+                            Description = "Visit the Eiffel Tower and enjoy a dinner cruise on the Seine.",
+                            ImageUrl = "images/actPa.jpg",
+                            Location = "Paris",
+                            Name = "Visit the Eiffel Tower",
                             Price = 150m
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Explore the wonders of the local museum.",
-                            ImageUrl = "images/museum.jpg",
-                            Name = "Museum Tour",
-                            Price = 50m
+                            Description = "Climb the Empire State Building or Top of the Rock for amazing views.",
+                            ImageUrl = "images/actNy.jpg",
+                            Location = "New York",
+                            Name = "The Empire State Building",
+                            Price = 150m
                         },
                         new
                         {
                             Id = 3,
-                            Description = "A guided tour of the city's landmarks.",
-                            ImageUrl = "images/sight.jpg",
-                            Name = "City Sightseeing",
-                            Price = 75m
+                            Description = "Visit Shibuya and cross the world-famous scramble crossing",
+                            ImageUrl = "images/actTo.jpg",
+                            Location = "Tokyo",
+                            Name = "Visit Shibuya",
+                            Price = 150m
                         },
                         new
                         {
                             Id = 4,
-                            Description = "A challenging hike through scenic mountains.",
-                            ImageUrl = "images/hiking.jpg",
-                            Name = "Mountain Hiking",
-                            Price = 100m
+                            Description = "Explore the Colosseum and the Roman Forum toss a coin into the Trevi Fountain for good luck.",
+                            ImageUrl = "images/actRo.jpg",
+                            Location = "Rome",
+                            Name = "The Colosseum",
+                            Price = 200m
                         },
                         new
                         {
                             Id = 5,
-                            Description = "Experience underwater adventure.",
-                            ImageUrl = "images/diving.jpg",
-                            Name = "Scuba Diving",
-                            Price = 200m
+                            Description = "Admire the iconic Sydney Opera House and Harbour Bridge Relax at Bondi Beach and walk the scenic Bondi to Coogee coastal trail.",
+                            ImageUrl = "images/actSy.jpg",
+                            Location = "Sydney",
+                            Name = "Sydney Opera House",
+                            Price = 150m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Wander through the historic Casbah of Algiers, a UNESCO World Heritage site",
+                            ImageUrl = "images/actAl.jpg",
+                            Location = "Algiers",
+                            Name = "The historic Casbah",
+                            Price = 100m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Visit the massive Palace of the Parliament, one of the largest buildings in the world",
+                            ImageUrl = "images/actBu.jpg",
+                            Location = "Bucharest",
+                            Name = "Palace of the Parliament",
+                            Price = 175m
                         });
                 });
 
@@ -403,29 +431,43 @@ namespace TourAgency.Migrations
                         new
                         {
                             Id = 2,
-                            City = "Rome",
-                            Country = "Italy",
-                            ImageUrl = "images/rome.jpg"
-                        },
-                        new
-                        {
-                            Id = 3,
                             City = "New York",
                             Country = "USA",
                             ImageUrl = "images/usa.jpg"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = 3,
                             City = "Tokyo",
                             Country = "Japan",
                             ImageUrl = "images/japan.jpg"
                         },
                         new
                         {
+                            Id = 4,
+                            City = "Rome",
+                            Country = "Italy",
+                            ImageUrl = "images/rome.jpg"
+                        },
+                        new
+                        {
                             Id = 5,
                             City = "Sydney",
                             Country = "Australia",
+                            ImageUrl = "images/australia.jpg"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            City = "Algiers",
+                            Country = "Algeria",
+                            ImageUrl = "images/australia.jpg"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            City = "Bucharest",
+                            Country = "Romania",
                             ImageUrl = "images/australia.jpg"
                         });
                 });
@@ -568,42 +610,58 @@ namespace TourAgency.Migrations
                         new
                         {
                             Id = 1,
-                            ImageUrl = "images/hotel1.jpg",
+                            ImageUrl = "images/hotelPa.jpg",
                             Location = "Paris",
-                            Name = "Grand Paris Hotel",
+                            Name = "Hôtel du Louvre by Hyatt",
                             Price = 150m
                         },
                         new
                         {
                             Id = 2,
-                            ImageUrl = "images/hotel2.jpg",
-                            Location = "Rome",
-                            Name = "Rome Luxury Suites",
+                            ImageUrl = "images/hotelNy.jpg",
+                            Location = "New York",
+                            Name = "Hôtel Quin Central Park",
                             Price = 200m
                         },
                         new
                         {
                             Id = 3,
-                            ImageUrl = "images/hotel3.jpg",
-                            Location = "New York",
-                            Name = "NYC Central Park Hotel",
+                            ImageUrl = "images/hotelTo.jpg",
+                            Location = "Tokyo",
+                            Name = "Hôtel Park Hyatt",
                             Price = 180m
                         },
                         new
                         {
                             Id = 4,
-                            ImageUrl = "images/hotel4.jpg",
-                            Location = "Tokyo",
-                            Name = "Tokyo Sakura Hotel",
+                            ImageUrl = "images/hotelRo.jpg",
+                            Location = "Rome",
+                            Name = "Hôtel de Russie",
                             Price = 140m
                         },
                         new
                         {
                             Id = 5,
-                            ImageUrl = "images/hotel1.jpg",
+                            ImageUrl = "images/hotelSy.jpg",
                             Location = "Sydney",
-                            Name = "Sydney Harbour Hotel",
-                            Price = 220m
+                            Name = "Hôtel Shangri-La",
+                            Price = 200m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ImageUrl = "images/hotelAl.jpg",
+                            Location = "Algiers",
+                            Name = "Hôtel El Aurassi",
+                            Price = 280m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ImageUrl = "images/hotelBu.jpg",
+                            Location = "Bucharest",
+                            Name = "Hôtel Le Scala Boutique",
+                            Price = 190m
                         });
                 });
 

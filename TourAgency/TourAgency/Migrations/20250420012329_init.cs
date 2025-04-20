@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TourAgency.Migrations
 {
     /// <inheritdoc />
-    public partial class BookingActivitynew : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,6 +21,7 @@ namespace TourAgency.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Location = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -379,14 +380,16 @@ namespace TourAgency.Migrations
 
             migrationBuilder.InsertData(
                 table: "Activities",
-                columns: new[] { "Id", "Description", "ImageUrl", "Name", "Price" },
+                columns: new[] { "Id", "Description", "ImageUrl", "Location", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, "A thrilling ski trip in the Alps.", "images/ski.jpg", "Skiing Adventure", 150m },
-                    { 2, "Explore the wonders of the local museum.", "images/museum.jpg", "Museum Tour", 50m },
-                    { 3, "A guided tour of the city's landmarks.", "images/sight.jpg", "City Sightseeing", 75m },
-                    { 4, "A challenging hike through scenic mountains.", "images/hiking.jpg", "Mountain Hiking", 100m },
-                    { 5, "Experience underwater adventure.", "images/diving.jpg", "Scuba Diving", 200m }
+                    { 1, "Visit the Eiffel Tower and enjoy a dinner cruise on the Seine.", "images/actPa.jpg", "Paris", "Visit the Eiffel Tower", 150m },
+                    { 2, "Climb the Empire State Building or Top of the Rock for amazing views.", "images/actNy.jpg", "New York", "The Empire State Building", 150m },
+                    { 3, "Visit Shibuya and cross the world-famous scramble crossing", "images/actTo.jpg", "Tokyo", "Visit Shibuya", 150m },
+                    { 4, "Explore the Colosseum and the Roman Forum toss a coin into the Trevi Fountain for good luck.", "images/actRo.jpg", "Rome", "The Colosseum", 200m },
+                    { 5, "Admire the iconic Sydney Opera House and Harbour Bridge Relax at Bondi Beach and walk the scenic Bondi to Coogee coastal trail.", "images/actSy.jpg", "Sydney", "Sydney Opera House", 150m },
+                    { 6, "Wander through the historic Casbah of Algiers, a UNESCO World Heritage site", "images/actAl.jpg", "Algiers", "The historic Casbah", 100m },
+                    { 7, "Visit the massive Palace of the Parliament, one of the largest buildings in the world", "images/actBu.jpg", "Bucharest", "Palace of the Parliament", 175m }
                 });
 
             migrationBuilder.InsertData(
@@ -400,10 +403,12 @@ namespace TourAgency.Migrations
                 values: new object[,]
                 {
                     { 1, "Paris", "France", "images/france.jpg" },
-                    { 2, "Rome", "Italy", "images/rome.jpg" },
-                    { 3, "New York", "USA", "images/usa.jpg" },
-                    { 4, "Tokyo", "Japan", "images/japan.jpg" },
-                    { 5, "Sydney", "Australia", "images/australia.jpg" }
+                    { 2, "New York", "USA", "images/usa.jpg" },
+                    { 3, "Tokyo", "Japan", "images/japan.jpg" },
+                    { 4, "Rome", "Italy", "images/rome.jpg" },
+                    { 5, "Sydney", "Australia", "images/australia.jpg" },
+                    { 6, "Algiers", "Algeria", "images/australia.jpg" },
+                    { 7, "Bucharest", "Romania", "images/australia.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -423,11 +428,13 @@ namespace TourAgency.Migrations
                 columns: new[] { "Id", "ImageUrl", "Location", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, "images/hotel1.jpg", "Paris", "Grand Paris Hotel", 150m },
-                    { 2, "images/hotel2.jpg", "Rome", "Rome Luxury Suites", 200m },
-                    { 3, "images/hotel3.jpg", "New York", "NYC Central Park Hotel", 180m },
-                    { 4, "images/hotel4.jpg", "Tokyo", "Tokyo Sakura Hotel", 140m },
-                    { 5, "images/hotel1.jpg", "Sydney", "Sydney Harbour Hotel", 220m }
+                    { 1, "images/hotelPa.jpg", "Paris", "Hôtel du Louvre by Hyatt", 150m },
+                    { 2, "images/hotelNy.jpg", "New York", "Hôtel Quin Central Park", 200m },
+                    { 3, "images/hotelTo.jpg", "Tokyo", "Hôtel Park Hyatt", 180m },
+                    { 4, "images/hotelRo.jpg", "Rome", "Hôtel de Russie", 140m },
+                    { 5, "images/hotelSy.jpg", "Sydney", "Hôtel Shangri-La", 200m },
+                    { 6, "images/hotelAl.jpg", "Algiers", "Hôtel El Aurassi", 280m },
+                    { 7, "images/hotelBu.jpg", "Bucharest", "Hôtel Le Scala Boutique", 190m }
                 });
 
             migrationBuilder.InsertData(
